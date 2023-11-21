@@ -7,6 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { loadCheckout } from "../lib/stripe";
 import Table from "./Table";
 import Loader from "./Loader";
+import Image from "next/image";
 
 interface Props {
 	products: Product[];
@@ -34,7 +35,7 @@ function Plans({ products }: Props) {
 			</Head>
 			<header className="border-b border-white/10 bg-[#141414]">
 				<Link href="/">
-					<img
+					<Image
 						src="https://rb.gy/ulxxee"
 						alt="Netflix"
 						width={150}
@@ -52,7 +53,7 @@ function Plans({ products }: Props) {
 
 			<main className="mx-auto max-w-5xl px-5 pt-28 pb-12 transition-all md:px-10 md:max-w-[95rem]">
 				<h1 className="mb-3 text-3xl font-medium">
-					Choose the plan that's right for you
+					Choose the plan that is right for you
 				</h1>
 				<ul>
 					<li className="flex items-center gap-x-2 text-lg">

@@ -79,6 +79,7 @@ const Modal = () => {
 				(snapshot) => setMovies(snapshot.docs)
 			);
 		}
+		// react-hooks/exhaustive-deps
 	}, [db, movie?.id]);
 
 	// Check if the movie is already in the user's list
@@ -87,6 +88,7 @@ const Modal = () => {
 			setAddedToList(
 				movies.findIndex((result) => result.data().id === movie?.id) !== -1
 			),
+		// react-hooks/exhaustive-deps
 		[movies]
 	);
 

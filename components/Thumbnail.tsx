@@ -42,6 +42,9 @@ const Thumbnail = ({ movie }: Props) => {
 				className="rounded-sm object-cover md:rounded"
 				layout="fill"
 			/>{" "}
+			<span className="absolute bottom-0 p-2 pb-3 bg-gradient-to-t from-black to-black/20 text-white text-lg w-full overflow-hidden text-ellipsis whitespace-nowrap">
+				{movie.original_title || movie.name}
+			</span>
 			{movie?.id == currentMovie?.id && (
 				<div
 					className={`${
