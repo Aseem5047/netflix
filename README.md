@@ -22,3 +22,6 @@
   * npm run dev
   
 ![image](https://user-images.githubusercontent.com/80787027/229789895-e92fcdbe-a479-4026-bf50-5846712cf392.png)
+
+![image](https://github.com/Aseem5047/netflix/assets/80787027/51d90234-4f0c-43a4-a3ed-76bc6087ee89)
+
