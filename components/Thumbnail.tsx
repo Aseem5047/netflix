@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../atoms/modalAtom";
 import { Movie } from "../typings";
+import { useState } from "react";
 
 interface Props {
 	movie: Movie | DocumentData;
@@ -11,6 +12,12 @@ interface Props {
 const Thumbnail = ({ movie }: Props) => {
 	const [showModal, setShowModal] = useRecoilState(modalState);
 	const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
+	const [cardHover, setCardHover] = useState(false);
+
+	// console.log(movie);
+	// console.log(cardHover);
+
+	// original_title overview
 
 	return (
 		<div
@@ -18,6 +25,14 @@ const Thumbnail = ({ movie }: Props) => {
 			onClick={() => {
 				setCurrentMovie(movie);
 				setShowModal(true);
+			}}
+			onMouseEnter={() => {
+				setCurrentMovie(movie);
+
+				setCardHover(true);
+			}}
+			onMouseLeave={() => {
+				setCardHover(false);
 			}}
 		>
 			<Image
@@ -27,6 +42,22 @@ const Thumbnail = ({ movie }: Props) => {
 				className="rounded-sm object-cover md:rounded"
 				layout="fill"
 			/>{" "}
+			{movie?.id == currentMovie?.id && (
+				<div
+					className={`${
+						cardHover
+							? "absolute bottom-0 p-2 pb-3 w-full bg-gradient-to-t from-black to-black/20 text-white flex flex-col gap-2 items-start justify-center"
+							: "hidden"
+					}`}
+				>
+					<span className="text-lg max-w-[13rem] overflow-hidden text-ellipsis whitespace-nowrap">
+						{movie.original_title || movie.name}
+					</span>
+					<span className="text-sm max-h-[10rem] overflow-hidden block line-clamp-3">
+						{movie?.overview}
+					</span>
+				</div>
+			)}
 		</div>
 	);
 };
