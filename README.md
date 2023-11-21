@@ -15,6 +15,8 @@
   
   ![image](https://user-images.githubusercontent.com/80787027/229786621-ff018053-11bd-41f7-bd78-45990ac3bf4f.png)
 
+  ![image](https://github.com/Aseem5047/netflix/assets/80787027/f555eac4-d8c4-4eac-8807-88354f976d69)
+
   # Steps to run in your machine
 ### Run the following commands
   * Download the code on your machine
