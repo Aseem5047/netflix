@@ -45,7 +45,12 @@ const Home = ({
 
 	if (loading || subscription === null) return null;
 	if (loading) return <Loading />;
+<<<<<<< HEAD
 	// if (!subscription) return <Plans products={products} />;
+=======
+	// uncomment the following line to make user without subscription redirected to subscriptions page work
+	// if (!subscription) return <Plans products={products} />; 
+>>>>>>> d478a27412e7cf65ab9ac22dd040c3e985998f31
 
 	return (
 		<>
